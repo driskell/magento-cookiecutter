@@ -1,0 +1,16 @@
+{
+    "name": "driskell/magento-cookiecutter",
+    "type": "magento-module",
+    "license": "Apache-2.0",
+    "description": "Magento 1 cookie fixer.",
+    "authors": [
+        {
+            "name": "Jason Woods",
+            "email": "devel@jasonwoods.me.uk"
+        }
+    ],
+    "homepage": "https://github.com/driskell/magento-cookiecutter",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
