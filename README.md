@@ -1,5 +1,7 @@
 # Cookie Cutter for Magento
 
+Fix broken Magento cookies.
+
 ## Overview
 
 Cookie Cutter will cleanup duplicated cookies on a visitor's machine to prevent them from encountering login issues.
