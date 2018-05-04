@@ -31,3 +31,5 @@ The following configuration options are currently available in System > Configur
 Option | Description
 --- | ---
 Enable | Enables the cookie cutter
+
+ *NOTE:* Ensure that Http Only is enabled in Magento Admin. Otherwise, logins may not function correctly for some users due a bug in Magento session handling when Http Only is disabled and Cookie Domain is empty.

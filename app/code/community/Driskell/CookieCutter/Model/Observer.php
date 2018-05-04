@@ -27,11 +27,13 @@ class Driskell_CookieCutter_Model_Observer
         $cookieSplit = preg_split('/;\\s*/', $_SERVER['HTTP_COOKIE']);
         foreach ($cookieSplit as $cookieString) {
             $keyValue = explode('=', $cookieString, 2);
-            if (isset($cookies[$keyValue[0]])) {
+            $cookieValue = isset($keyValue[1]) ? $keyValue[1] : '';
+            // Handle receiving same cookie twice - this can happen normally because Magento will renew sessions
+            // by sending a cookie domain, but will start a new logged in session without it so we end up with two cookies
+            if (isset($cookies[$keyValue[0]]) && !in_array($keyValue[0], $duplicateCookies) && $cookieValue !== $cookies[$keyValue[0]]) {
                 $duplicateCookies[] = $keyValue[0];
-            } else {
-                $cookies[$keyValue[0]] = isset($keyValue[1]) ? $keyValue[1] : '';
             }
+            $cookies[$keyValue[0]] = $cookieValue;
         }
 
         if (!$duplicateCookies) {
