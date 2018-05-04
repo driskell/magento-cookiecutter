@@ -64,6 +64,7 @@ class Driskell_CookieCutter_Model_Observer
                 null,
                 'cookiecutter.log'
             );
+            setcookie($key, '', time() - 3600, '/');
             foreach ($hostList as $host) {
                 // NOTE: Should we load the path from configuration?
                 setcookie($key, '', time() - 3600, '/', $host);

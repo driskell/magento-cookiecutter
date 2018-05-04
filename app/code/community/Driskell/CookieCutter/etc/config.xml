@@ -9,7 +9,7 @@
 <config>
     <modules>
         <Driskell_CookieCutter>
-             <version>1.0.0</version>
+             <version>1.0.1</version>
         </Driskell_CookieCutter>
     </modules>
     <global>
@@ -29,7 +29,7 @@
     <default>
         <driskell_cookiecutter>
             <general>
-                <enabled>1</enabled>
+                <enabled>0</enabled>
             </general>
         </driskell_cookiecutter>
     </default>
