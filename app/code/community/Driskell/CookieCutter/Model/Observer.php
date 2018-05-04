@@ -18,17 +18,7 @@ class Driskell_CookieCutter_Model_Observer
      */
     public function triggerCookieCutter(Varien_Observer $observer)
     {
-        $this->cleanupDuplicatedCooies();
-    }
-
-    /**
-     * Remove duplicated cookies
-     *
-     * @return void
-     */
-    private function cleanupDuplicatedCooies()
-    {
-        if (!isset($_SERVER['HTTP_COOKIE']) || !isset($_SERVER['HTTP_HOST'])) {
+        if (!Mage::getStoreConfig('driskell_cookiecutter/general/enabled') || !isset($_SERVER['HTTP_COOKIE']) || !isset($_SERVER['HTTP_HOST'])) {
             return;
         }
 

@@ -9,7 +9,7 @@
 <config>
     <modules>
         <Driskell_CookieCutter>
-             <version>1.0.1</version>
+             <version>1.0.2</version>
         </Driskell_CookieCutter>
     </modules>
     <global>
@@ -18,13 +18,16 @@
                 <class>Driskell_CookieCutter_Model</class>
             </driskell_cookiecutter>
         </models>
-        <observers>
+        <events>
             <controller_front_init_before>
-                <type>singleton</type>
-                <class>driskell_cookiecutter/observer</class>
-                <method>triggerCookieCutter</method>
+                <observers>
+                    <driskell_cookiecutter>
+                        <class>driskell_cookiecutter/observer</class>
+                        <method>triggerCookieCutter</method>
+                    </driskell_cookiecutter>
+                </observers>
             </controller_front_init_before>
-        </observers>
+        </events>
     </global>
     <default>
         <driskell_cookiecutter>
