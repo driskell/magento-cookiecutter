@@ -13,10 +13,10 @@ class Driskell_CookieCutter_Model_Observer
     /**
      * Trigger removal of duplicated cookies on every page load
      *
-     * @param Varien_Observer $observer
+     * @param Varien_Event_Observer $observer
      * @return void
      */
-    public function triggerCookieCutter(Varien_Observer $observer)
+    public function triggerCookieCutter($observer)
     {
         if (!Mage::getStoreConfig('driskell_cookiecutter/general/enabled') || !isset($_SERVER['HTTP_COOKIE']) || !isset($_SERVER['HTTP_HOST'])) {
             return;
